@@ -307,7 +307,10 @@ def save_score(score):
     else:
         leaders = {}
 
-    leaders[name] = score
+    if leaders[name]:
+        leaders[name] += score
+    else:
+        leaders[name] = score
 
     with open(filename, 'w', encoding = ENCODING) as file:
         json.dump(leaders, file)
