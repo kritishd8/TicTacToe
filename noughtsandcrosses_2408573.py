@@ -10,6 +10,7 @@ import os.path
 import json
 random.seed()
 
+
 ENCODING = "utf-8"
 
 

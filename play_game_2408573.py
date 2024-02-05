@@ -4,7 +4,7 @@
     Student ID: 2408573
 """
 
-from noughtsandcrosses import *
+from noughtsandcrosses_2408573 import *
 
 
 def main():
