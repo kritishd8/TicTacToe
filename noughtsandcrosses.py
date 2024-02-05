@@ -307,7 +307,7 @@ def save_score(score):
     else:
         leaders = {}
 
-    if leaders[name]:
+    if name in leaders:
         leaders[name] += score
     else:
         leaders[name] = score
