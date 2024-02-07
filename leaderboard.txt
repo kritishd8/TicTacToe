@@ -1,1 +1,1 @@
-{"kritish": 5, "salon": 1}
+{"kritish": 2, "salon": 1}

@@ -84,7 +84,8 @@ def get_player_move(board):
         square = int(input("Choose your square: 7  8  9 : "))
 
         if square not in [1,2,3,4,5,6,7,8,9]:
-            square = 0
+            print('\nInvalid cell selected! Please input a valid cell.')
+            continue
 
         # ? Getting the row
         if square in [1,2,3]:
@@ -298,6 +299,7 @@ def save_score(score):
     name = input("Please enter your name: ")
     filename = 'leaderboard.txt'
 
+    #? Check if the leaderboard file exists
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding = ENCODING) as file:
@@ -308,8 +310,11 @@ def save_score(score):
     else:
         leaders = {}
 
+    #? If user already is in leader board
     if name in leaders:
-        leaders[name] += score
+        #? Check if users previous score was higher than current score
+        if leaders[name] < score:
+            leaders[name] = score
     else:
         leaders[name] = score
 
