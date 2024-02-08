@@ -81,7 +81,13 @@ def get_player_move(board):
         print('\n')
         print("\t\t    1  2  3 ")
         print("\t\t    4  5  6 ")
-        square = int(input("Choose your square: 7  8  9 : "))
+        square = input("Choose your square: 7  8  9 : ")
+
+        try:
+            square = int(square)
+        except ValueError:
+            print('Please input a number!')
+            continue
 
         if square not in [1,2,3,4,5,6,7,8,9]:
             print('\nInvalid cell selected! Please input a valid cell.')
